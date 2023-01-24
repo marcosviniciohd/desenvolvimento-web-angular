@@ -1,0 +1,10 @@
+"use strict";
+let ola = (nome) => { console.log("Olá " + nome); };
+ola("Marcos Vinício");
+let nomeSobrenome = (nome, sobreNome) => { console.log("Olá " + nome + " " + sobreNome); };
+nomeSobrenome("Marcos Vinício", "Fernandes");
+let mensagem = "Seja bem vindo";
+let temporadasFriends = 10;
+let estudandoAngular = true;
+let listaDeFrutas = ['Uva', 'Banana', 'Abacaxi'];
+let notasDasProvas = [7.5, 8, 9];

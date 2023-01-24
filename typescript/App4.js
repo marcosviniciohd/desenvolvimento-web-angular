@@ -1,0 +1,12 @@
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+const ConcessionariaDao_1 = require("./ConcessionariaDao");
+const Concessionaria_1 = require("./Concessionaria");
+const PessoaDao_1 = require("./PessoaDao");
+const Pessoa_1 = require("./Pessoa");
+let concessionariaDao = new ConcessionariaDao_1.ConcessionariaDao();
+let concessionaria = new Concessionaria_1.Concessionaria('', []);
+concessionariaDao.inserir(concessionaria);
+let pessoDao = new PessoaDao_1.PessoaDao();
+let pessoa = new Pessoa_1.Pessoa('Marcos', 'Punto');
+pessoDao.atualizar(pessoa);
