@@ -9,17 +9,17 @@ import { FRASES } from './frases-mock';
 })
 export class PainelComponent {
 
-  public i: number = 0;
-
   public instrucao: string = 'Traduza a frase';
   public frases: Frase[] = FRASES;
+  public resposta: string = '';
 
   constructor(){
     console.log(this.frases);
   }
 
-  public atualizaResposta(): void {
-    console.log('Teste ' + this.i++);
+  public atualizaResposta(resposta: Event): void {
+    this.resposta = (<HTMLInputElement>resposta.target).value;
+    console.log(this.resposta);
   }
 
 }
