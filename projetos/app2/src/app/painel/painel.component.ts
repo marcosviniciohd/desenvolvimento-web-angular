@@ -13,13 +13,16 @@ export class PainelComponent {
   public frases: Frase[] = FRASES;
   public resposta: string = '';
 
+  public rodata: number = 0;
+  public rodadaFrase: Frase;
+
   constructor(){
-    console.log(this.frases);
+    this.rodadaFrase = this.frases[this.rodata];
+    console.log(this.rodadaFrase);
   }
 
   public atualizaResposta(resposta: Event): void {
     this.resposta = (<HTMLInputElement>resposta.target).value;
-    //console.log(this.resposta);
   }
 
   public verificarResposta(): void {
