@@ -12,10 +12,14 @@
       </div>
       <div class="row">
         <div class="col">
-          <h6>Traduza a frase</h6>
-          <p>How are you?</p>
+          <h6>{{ instrucao }}</h6>
+          <p>{{ frases[1].fraseEng }}</p>
           <div class="form-group">
-            <textarea cols="30" rows="3" class="form-control">
+            <textarea 
+            cols="30" 
+            rows="3" 
+            class="form-control"
+            (input)="atualizaResposta()">
 
             </textarea>
           </div>
