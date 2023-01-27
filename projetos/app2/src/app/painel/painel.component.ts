@@ -13,12 +13,12 @@ export class PainelComponent {
   public frases: Frase[] = FRASES;
   public resposta: string = '';
 
-  public rodata: number = 0;
+  public rodada: number = 0;
   public rodadaFrase: Frase;
 
   constructor(){
-    this.rodadaFrase = this.frases[this.rodata];
-    console.log(this.rodadaFrase);
+    this.rodadaFrase = this.frases[this.rodada];
+    console.log(this.rodadaFrase)
   }
 
   public atualizaResposta(resposta: Event): void {
@@ -26,7 +26,21 @@ export class PainelComponent {
   }
 
   public verificarResposta(): void {
-    console.log('Verificar resposta: ' + this.resposta);
+
+    if(this.rodadaFrase.frasePtBr == this.resposta) {
+      alert('A tradução está correta');
+      // Trocar pergunda da rodada.
+      this.rodada++;
+      console.log(this.rodada);
+      // Atualiza o objeto rodadaFrase
+      this.rodadaFrase = this.frases[this.rodada];
+      console.log(this.rodadaFrase);
+    } else {
+      alert('A tradução está errada.')
+    }
+
+
+
   }
 
 }
