@@ -15,6 +15,7 @@ export class PainelComponent {
 
   public rodada: number = 0;
   public rodadaFrase: Frase;
+  public progresso: number = 0;
 
   constructor(){
     this.rodadaFrase = this.frases[this.rodada];
@@ -31,6 +32,9 @@ export class PainelComponent {
       alert('A tradução está correta');
       // Trocar pergunda da rodada.
       this.rodada++;
+      // Incrementar a barra de progresso
+      this.progresso = this.progresso + (100 / this.frases.length);
+      console.log(this.progresso);
       console.log(this.rodada);
       // Atualiza o objeto rodadaFrase
       this.rodadaFrase = this.frases[this.rodada];

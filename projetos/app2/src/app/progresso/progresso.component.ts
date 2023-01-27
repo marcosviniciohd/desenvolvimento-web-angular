@@ -7,4 +7,6 @@ import { Component } from '@angular/core';
 })
 export class ProgressoComponent {
 
+  public progresso: number = 25;
+
 }
