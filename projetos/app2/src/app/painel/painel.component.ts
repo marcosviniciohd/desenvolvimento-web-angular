@@ -29,14 +29,10 @@ export class PainelComponent {
 
   public verificarResposta(): void {
 
-    console.log(this.tentativas);
-    
     if(this.rodadaFrase.frasePtBr == this.resposta) {
       alert('A tradução está correta');
       this.rodada++;
       this.progresso = this.progresso + (100 / this.frases.length);
-      console.log(this.progresso);
-      console.log(this.rodada);
       this.atualizaRodada();
 
     } else {
@@ -45,8 +41,6 @@ export class PainelComponent {
         alert('Você perdeu todas as tentativas');
       }
     }
-
-    console.log(this.tentativas);
 
   }
 
