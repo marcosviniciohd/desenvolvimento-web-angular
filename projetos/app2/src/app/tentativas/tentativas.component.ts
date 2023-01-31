@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input } from '@angular/core';
 import { Coracao } from '../shared/coracao.model';
 
 @Component({
@@ -8,8 +8,7 @@ import { Coracao } from '../shared/coracao.model';
 })
 export class TentativasComponent {
 
-  public coracaoVazio: string = '/assets/coracao_vazio.png';
-  public coracaoCheio: string = '/assets/coracao_cheio.png';
+  @Input() public tentativas: number | undefined;
 
   public coracoes: Coracao[] = [
     new Coracao(true), new Coracao(true), new Coracao(true)
@@ -17,6 +16,11 @@ export class TentativasComponent {
 
   constructor(){
     console.log(this.coracoes);
+  }
+
+  ngOnInit(){
+    console.log('Tentativas recebidas do painel: ', this.tentativas);
+
   }
 
 }
