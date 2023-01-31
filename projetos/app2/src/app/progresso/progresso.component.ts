@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, Input, OnInit } from '@angular/core';
 
 @Component({
   selector: 'app-progresso',
@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class ProgressoComponent {
 
-  public progresso: number = 25;
+  @Input() public progresso: number = 0;
+
 
 }
