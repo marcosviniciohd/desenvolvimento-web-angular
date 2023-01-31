@@ -16,6 +16,7 @@ export class PainelComponent {
   public rodada: number = 0;
   public rodadaFrase: Frase;
   public progresso: number = 0;
+  public tentativas: number = 3;
 
   constructor(){
     this.rodadaFrase = this.frases[this.rodada];
@@ -28,26 +29,29 @@ export class PainelComponent {
 
   public verificarResposta(): void {
 
+    console.log(this.tentativas);
+    
     if(this.rodadaFrase.frasePtBr == this.resposta) {
       alert('A tradução está correta');
-      // Trocar pergunda da rodada.
       this.rodada++;
-      // Incrementar a barra de progresso
       this.progresso = this.progresso + (100 / this.frases.length);
       console.log(this.progresso);
       console.log(this.rodada);
-      // Atualiza o objeto rodadaFrase
       this.atualizaRodada();
 
     } else {
-      alert('A tradução está errada.')
+      this.tentativas--;
+      if(this.tentativas === -1){
+        alert('Você perdeu todas as tentativas');
+      }
     }
+
+    console.log(this.tentativas);
 
   }
 
   public atualizaRodada(): void {
     this.rodadaFrase = this.frases[this.rodada];
-    // Limpar a resposta
     this.resposta = '';
   }
 
