@@ -25,7 +25,6 @@ export class PainelComponent implements OnDestroy{
   }
 
   ngOnDestroy(){
-    console.log('Componente painel foi destruído!');
   }
 
   public atualizaResposta(resposta: Event): void {
@@ -44,7 +43,6 @@ export class PainelComponent implements OnDestroy{
 
     } else {
       this.tentativas--;
-      console.log('Tradução errada!');
       if(this.tentativas === -1){
         this.encerrarJogo.emit('derrota');
         
