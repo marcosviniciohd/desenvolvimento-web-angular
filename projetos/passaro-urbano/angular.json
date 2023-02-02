@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "app1": {
+    "passaro-urbano": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/app1",
+            "outputPath": "dist/passaro-urbano",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": [
@@ -28,7 +28,11 @@
               "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
-            "scripts": []
+            "scripts": [
+              "node_modules/tether/dist/js/tether.min.js",
+              "node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js"
+            ]
           },
           "configurations": {
             "production": {
@@ -61,10 +65,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "browserTarget": "app1:build:production"
+              "browserTarget": "passaro-urbano:build:production"
             },
             "development": {
-              "browserTarget": "app1:build:development"
+              "browserTarget": "passaro-urbano:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -72,7 +76,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "app1:build"
+            "browserTarget": "passaro-urbano:build"
           }
         },
         "test": {
@@ -95,5 +99,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": "e7eda688-0035-4b29-bd3e-9410d8702434"
   }
 }
