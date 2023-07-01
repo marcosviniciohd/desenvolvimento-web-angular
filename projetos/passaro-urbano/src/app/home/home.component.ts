@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
+
 import { OfertasService } from '../ofertas.services';
+import { Oferta } from '../shared/oferta.model';
 
 @Component({
   selector: 'app-home',
@@ -9,12 +11,14 @@ import { OfertasService } from '../ofertas.services';
 })
 export class HomeComponent {
 
-  constructor(private ofertasService: OfertasService){
+  public ofertas: Oferta[] | undefined
 
-  }
+  constructor(private ofertasService: OfertasService){}
 
   ngOnInit() {
-      console.log(this.ofertasService.getOfertas());
+      this.ofertas = this.ofertasService.getOfertas();
+      console.log(this.ofertas);
+      
   }
 
 }
